@@ -1,0 +1,7 @@
+com\cidenet\application\services\UserServices.class
+com\cidenet\application\services\impl\UserServicesImpl.class
+com\cidenet\application\repositories\UserRepository.class
+com\cidenet\application\AppException.class
+com\cidenet\application\App.class
+com\cidenet\application\controllers\UserController.class
+com\cidenet\application\entities\User.class

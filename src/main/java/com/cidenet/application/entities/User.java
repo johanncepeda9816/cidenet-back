@@ -2,6 +2,13 @@ package com.cidenet.application.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User implements Serializable{
 
     private String firstName;
@@ -18,7 +25,6 @@ public class User implements Serializable{
     private boolean active;
 
     public User() {
-
     }
 
     public User(String firstName, String firstSurname, String secondSurname, String registrationDate, String modificationDate, String documentType, String documentNumber, String area, String otherName, String country, String email, boolean active) {
@@ -36,6 +42,7 @@ public class User implements Serializable{
         this.active = active;
     }
 
+    @Column(name = "firstName")
     public String getFirstName() {
         return this.firstName;
     }
@@ -44,6 +51,7 @@ public class User implements Serializable{
         this.firstName = firstName;
     }
 
+    @Column(name = "firstSurname")
     public String getFirstSurname() {
         return this.firstSurname;
     }
@@ -52,6 +60,7 @@ public class User implements Serializable{
         this.firstSurname = firstSurname;
     }
 
+    @Column(name = "secondSurname")
     public String getSecondSurname() {
         return this.secondSurname;
     }
@@ -59,15 +68,15 @@ public class User implements Serializable{
     public void setSecondSurname(String secondSurname) {
         this.secondSurname = secondSurname;
     }
-
+    @Column(name = "registrationDate")
     public String getRegistrationDate() {
         return this.registrationDate;
     }
-
     public void setRegistrationDate(String registrationDate) {
         this.registrationDate = registrationDate;
     }
 
+    @Column(name = "modificationDate")
     public String getModificationDate() {
         return this.modificationDate;
     }
@@ -76,6 +85,7 @@ public class User implements Serializable{
         this.modificationDate = modificationDate;
     }
 
+    @Column(name = "documentType")
     public String getDocumentType() {
         return this.documentType;
     }
@@ -84,6 +94,8 @@ public class User implements Serializable{
         this.documentType = documentType;
     }
 
+    @Id
+    @Column(name = "documentNumber")
     public String getDocumentNumber() {
         return this.documentNumber;
     }
@@ -92,6 +104,7 @@ public class User implements Serializable{
         this.documentNumber = documentNumber;
     }
 
+    @Column(name = "area")
     public String getArea() {
         return this.area;
     }
@@ -100,6 +113,7 @@ public class User implements Serializable{
         this.area = area;
     }
 
+    @Column(name = "otherName")
     public String getOtherName() {
         return this.otherName;
     }
@@ -108,6 +122,7 @@ public class User implements Serializable{
         this.otherName = otherName;
     }
 
+    @Column(name = "country")
     public String getCountry() {
         return this.country;
     }
@@ -116,6 +131,7 @@ public class User implements Serializable{
         this.country = country;
     }
 
+    @Column(name = "email")
     public String getEmail() {
         return this.email;
     }
@@ -123,73 +139,14 @@ public class User implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
+    @Column(name = "active")
     public boolean getActive() {
         return this.active;
     }
 
     public void setActive(boolean active) {
         this.active = active;
-    }
-
-    public User firstName(String firstName) {
-        setFirstName(firstName);
-        return this;
-    }
-
-    public User firstSurname(String firstSurname) {
-        setFirstSurname(firstSurname);
-        return this;
-    }
-
-    public User secondSurname(String secondSurname) {
-        setSecondSurname(secondSurname);
-        return this;
-    }
-
-    public User registrationDate(String registrationDate) {
-        setRegistrationDate(registrationDate);
-        return this;
-    }
-
-    public User modificationDate(String modificationDate) {
-        setModificationDate(modificationDate);
-        return this;
-    }
-
-    public User documentType(String documentType) {
-        setDocumentType(documentType);
-        return this;
-    }
-
-    public User documentNumber(String documentNumber) {
-        setDocumentNumber(documentNumber);
-        return this;
-    }
-
-    public User area(String area) {
-        setArea(area);
-        return this;
-    }
-
-    public User otherName(String otherName) {
-        setOtherName(otherName);
-        return this;
-    }
-
-    public User country(String country) {
-        setCountry(country);
-        return this;
-    }
-
-    public User email(String email) {
-        setEmail(email);
-        return this;
-    }
-
-    public User active(boolean active) {
-        setActive(active);
-        return this;
     }
 
     @Override
@@ -209,5 +166,6 @@ public class User implements Serializable{
             ", active='" + getActive() + "'" +
             "}";
     }
+
 
 }
