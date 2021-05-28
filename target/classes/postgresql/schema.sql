@@ -1,33 +1,19 @@
+drop table if no exists users;
+
 CREATE TABLE users(
-    firstSurname VARCHAR(20) not null,
-    secondSurname VARCHAR(20) not null,
-    firstName VARCHAR(20) not null,
-    otherName VARCHAR(50) not null,
-    documentType VARCHAR(250) not null,
-    documentNumber VARCHAR(250) not null,
-    country VARCHAR(100) not null,
-    area VARCHAR(100) not null,
-    email VARCHAR(250) not null,
-    registrationDate VARCHAR(20) not null,
-    modificationDate VARCHAR(20) not null,
-    active BOOL not null
+	document_number VARCHAR(50) not null,
+	active BOOL not null,
+	area VARCHAR(100) not null,
+	country VARCHAR(100) not null,
+	document_type VARCHAR(250) not null,
+	email VARCHAR(250) not null,
+	first_name VARCHAR(20) not null,
+	first_surname VARCHAR(20) not null,
+	modification_date VARCHAR(20) not null,
+	other_name VARCHAR(50) not null,
+	registration_date VARCHAR(20) not null,
+	second_surname VARCHAR(20) not null
 );
 
 alter table users
-add constraint pk_users primary key(documentNumber);
-drop table users;
-insert into users
-values(
-        'Cepeda',
-        'Alza',
-        'Johann',
-        'Alfonso',
-        'Cédula de Ciudadanía',
-        '1020831979',
-        'Colombia',
-        'Infraestructura',
-        'johann.cepeda@cidenet.com',
-        '2021-05-28T12:14',
-        '2021-05-28T12:14',
-        true
-    );
+add constraint pk_users primary key(document_number);

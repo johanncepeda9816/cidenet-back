@@ -17,7 +17,7 @@ public class UserServicesImpl implements UserServices{
 
     public void registerUser(User user) {
         try {
-
+            userRepository.save(user);
         } catch (Exception e) {
             throw e;
         }

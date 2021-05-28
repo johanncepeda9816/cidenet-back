@@ -17,6 +17,7 @@ public class User implements Serializable{
     private String registrationDate;
     private String modificationDate;
     private String documentType;
+    @Id
     private String documentNumber;
     private String area;
     private String otherName;
@@ -94,7 +95,6 @@ public class User implements Serializable{
         this.documentType = documentType;
     }
 
-    @Id
     @Column(name = "documentNumber", nullable = false)
     public String getDocumentNumber() {
         return this.documentNumber;
