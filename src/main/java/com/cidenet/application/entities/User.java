@@ -42,7 +42,7 @@ public class User implements Serializable{
         this.active = active;
     }
 
-    @Column(name = "firstName")
+    @Column(name = "firstName", nullable = false)
     public String getFirstName() {
         return this.firstName;
     }
@@ -51,7 +51,7 @@ public class User implements Serializable{
         this.firstName = firstName;
     }
 
-    @Column(name = "firstSurname")
+    @Column(name = "firstSurname", nullable = false)
     public String getFirstSurname() {
         return this.firstSurname;
     }
@@ -60,7 +60,7 @@ public class User implements Serializable{
         this.firstSurname = firstSurname;
     }
 
-    @Column(name = "secondSurname")
+    @Column(name = "secondSurname", nullable = false)
     public String getSecondSurname() {
         return this.secondSurname;
     }
@@ -68,7 +68,7 @@ public class User implements Serializable{
     public void setSecondSurname(String secondSurname) {
         this.secondSurname = secondSurname;
     }
-    @Column(name = "registrationDate")
+    @Column(name = "registrationDate", nullable = false)
     public String getRegistrationDate() {
         return this.registrationDate;
     }
@@ -76,7 +76,7 @@ public class User implements Serializable{
         this.registrationDate = registrationDate;
     }
 
-    @Column(name = "modificationDate")
+    @Column(name = "modificationDate", nullable = false)
     public String getModificationDate() {
         return this.modificationDate;
     }
@@ -85,7 +85,7 @@ public class User implements Serializable{
         this.modificationDate = modificationDate;
     }
 
-    @Column(name = "documentType")
+    @Column(name = "documentType", nullable = false)
     public String getDocumentType() {
         return this.documentType;
     }
@@ -95,7 +95,7 @@ public class User implements Serializable{
     }
 
     @Id
-    @Column(name = "documentNumber")
+    @Column(name = "documentNumber", nullable = false)
     public String getDocumentNumber() {
         return this.documentNumber;
     }
@@ -104,7 +104,7 @@ public class User implements Serializable{
         this.documentNumber = documentNumber;
     }
 
-    @Column(name = "area")
+    @Column(name = "area", nullable = false)
     public String getArea() {
         return this.area;
     }
@@ -113,7 +113,7 @@ public class User implements Serializable{
         this.area = area;
     }
 
-    @Column(name = "otherName")
+    @Column(name = "otherName", nullable = false)
     public String getOtherName() {
         return this.otherName;
     }
@@ -122,7 +122,7 @@ public class User implements Serializable{
         this.otherName = otherName;
     }
 
-    @Column(name = "country")
+    @Column(name = "country", nullable = false)
     public String getCountry() {
         return this.country;
     }
@@ -131,7 +131,7 @@ public class User implements Serializable{
         this.country = country;
     }
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     public String getEmail() {
         return this.email;
     }
@@ -140,7 +140,7 @@ public class User implements Serializable{
         this.email = email;
     }
     
-    @Column(name = "active")
+    @Column(name = "active", nullable = false)
     public boolean getActive() {
         return this.active;
     }

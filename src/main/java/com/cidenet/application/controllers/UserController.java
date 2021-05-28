@@ -38,10 +38,11 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    @GetMapping("/users")
-	public ResponseEntity<List<User>> getAllEmployees() {
+    
+    @RequestMapping(method = RequestMethod.GET, path = { "/getAllUsers" })
+	public ResponseEntity<List<User>> getAllUsers() {
 		List<User> users = userServices.getAllUsers();
+        System.out.println(users);
         return ResponseEntity.ok().body(users);
 	}
 
