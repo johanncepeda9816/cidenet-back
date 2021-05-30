@@ -1,9 +1,13 @@
 package com.cidenet.application.entities;
 
+/**
+ * Entidad de correo electrónico
+ * @author Johann Cepeda
+ */
 public class Email {
+    
     private String email;
     
-
     public Email() {
     }
 

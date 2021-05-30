@@ -15,6 +15,10 @@ import com.cidenet.application.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Clase de implementacion de los servicios de usuario
+ * @author Johann Cepeda
+ */
 @Component
 public class UserServicesImpl implements UserServices {
 

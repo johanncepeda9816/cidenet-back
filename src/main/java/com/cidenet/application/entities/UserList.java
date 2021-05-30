@@ -2,6 +2,10 @@ package com.cidenet.application.entities;
 
 import java.util.List;
 
+/**
+ * Entidad auxiliar de la edición de usuarios
+ * @author Johann Cepeda
+ */
 public class UserList {
     private List<User> users;
 

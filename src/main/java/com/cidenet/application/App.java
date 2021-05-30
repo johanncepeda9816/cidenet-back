@@ -3,6 +3,9 @@ package com.cidenet.application;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Clase principal
+ */
 @SpringBootApplication
 public class App {
     public static void main(String[] args) {
@@ -15,6 +18,10 @@ public class App {
         }
     }
 
+    /**
+     * Metodo auxiliar para cuando el puerto de despliegue no este configurado
+     * @return puerto
+     */
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));

@@ -1,7 +1,6 @@
 package com.cidenet.application;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,18 +8,32 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+
+/**
+ * Maneja los logs del sistema en un archivo de texto "log.txt"
+ */
 public class Log {
     
     private static BufferedWriter bufferedReader;
     private static String path;
     private static Log instance;
 
+    /**
+     * Constructor de la clase
+     * @param path
+     */
     public Log(String path){
         if(instance == null)
             instance = this;
         this.path = path;
     }
 
+    /**
+     * Constructor de la clase con parametros
+     * @param path
+     * @param reset
+     * @throws IOException
+     */
     public Log(String path, boolean reset) throws IOException{
         if(instance == null)
             instance = this;
@@ -28,10 +41,20 @@ public class Log {
         open(!reset);
     }
 
+    /**
+     * Abre el archivo en modo de escritura agregada
+     * @param append Lectura o escritura ?
+     * @throws IOException
+     */
     private static void open(boolean append) throws IOException{
         bufferedReader = new BufferedWriter(new FileWriter(path, append));
     }
 
+    /**
+     * Agrega una linea de texto sobre el archivo con su fecha de registro
+     * @param line Linea agregada
+     * @throws IOException
+     */
     public static void addLine(String line) throws IOException{
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/YYYY HH:mm:ss");
         String dateFormat = format.format(new Date());
@@ -40,6 +63,11 @@ public class Log {
         close();
     }
 
+    /**
+     * Obtener los logs
+     * @return Logs registrados
+     * @throws IOException
+     */
     public static String[] getLines() throws IOException{
         ArrayList<String> linesRead = new ArrayList<String>();
 
@@ -60,11 +88,19 @@ public class Log {
         return lines;
     }
 
+    /**
+     * Reinicia los registros (Cada ejecucion)
+     * @throws IOException
+     */
     public static void resetLog() throws IOException{
         open(false);
         close();
     }
 
+    /**
+     * Cierra el archivo
+     * @throws IOException
+     */
     private static void close() throws IOException {
         bufferedReader.close();
     }

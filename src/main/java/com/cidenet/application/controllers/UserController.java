@@ -121,6 +121,11 @@ public class UserController {
         }
     }
 
+    /**
+     * Elimina un registro de la base de datos dado su número de documento
+     * @param documentNumber Documento de referencia
+     * @return Respuesta de la operación
+     */
     @PostMapping("/deleteUser")
     public ResponseEntity<?> deleteUser(@RequestParam("documentNumber") String documentNumber){
         try {

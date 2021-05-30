@@ -1,5 +1,9 @@
 package com.cidenet.application;
 
+/**
+ * Clase de excepciones de la aplicacion
+ * @author Johann Cepeda
+ */
 public class AppException extends Exception{
 
     public final static String EL_NUMERO_DE_DOCUMENTO_YA_SE_ENCUENTRA_REGISTRADO = "EL NUMERO DE DOCUMENTO YA SE ENCUENTRA REGISTRADO";
