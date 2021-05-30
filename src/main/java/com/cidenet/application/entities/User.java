@@ -1,6 +1,7 @@
 package com.cidenet.application.entities;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,14 +12,15 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class User implements Serializable{
 
+    @Id
+    private String documentNumber;
     private String firstName;
     private String firstSurname;
     private String secondSurname;
+    private String enterDate;
     private String registrationDate;
     private String modificationDate;
     private String documentType;
-    @Id
-    private String documentNumber;
     private String area;
     private String otherName;
     private String country;
@@ -28,12 +30,13 @@ public class User implements Serializable{
     public User() {
     }
 
-    public User(String firstName, String firstSurname, String secondSurname, String registrationDate, String modificationDate, String documentType, String documentNumber, String area, String otherName, String country, String email, boolean active) {
+    public User(String firstName, String firstSurname, String secondSurname, String registrationDate, String modificationDate, String enterDate, String documentType, String documentNumber, String area, String otherName, String country, String email, boolean active) {
         this.firstName = firstName;
         this.firstSurname = firstSurname;
         this.secondSurname = secondSurname;
         this.registrationDate = registrationDate;
         this.modificationDate = modificationDate;
+        this.enterDate = enterDate;
         this.documentType = documentType;
         this.documentNumber = documentNumber;
         this.area = area;
@@ -82,8 +85,17 @@ public class User implements Serializable{
         return this.modificationDate;
     }
 
-    public void setModificationDate(String modificationDate) {
-        this.modificationDate = modificationDate;
+    public void setModificationDate(String now) {
+        this.modificationDate = now;
+    }
+
+    @Column(name = "enterDate", nullable = false)
+    public String getEnterDate(){
+        return this.enterDate;
+    }
+
+    public void setEnterDate(String enterDate){
+        this.enterDate = enterDate;
     }
 
     @Column(name = "documentType", nullable = false)
@@ -113,7 +125,7 @@ public class User implements Serializable{
         this.area = area;
     }
 
-    @Column(name = "otherName", nullable = false)
+    @Column(name = "otherName", nullable = true)
     public String getOtherName() {
         return this.otherName;
     }

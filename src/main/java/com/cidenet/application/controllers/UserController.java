@@ -3,7 +3,9 @@ package com.cidenet.application.controllers;
 import java.util.List;
 
 import com.cidenet.application.AppException;
+import com.cidenet.application.entities.Email;
 import com.cidenet.application.entities.User;
+import com.cidenet.application.entities.UserList;
 import com.cidenet.application.services.UserServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,13 +38,24 @@ public class UserController {
      * @return Estado de la operacion
      */
     @RequestMapping(method = RequestMethod.POST, path = { "/registerUser" })
-    public ResponseEntity<?> registerUser(@RequestBody User user){
+    public ResponseEntity<String> registerUser(@RequestBody User user){
         try {
             userServices.registerUser(user);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            return new ResponseEntity<String>("Creado", HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            System.out.print(e.getMessage());
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = { "/generateEmail" })
+    public Email generateEmail(@RequestParam("name") String name, @RequestParam("lastName") String lastName, @RequestParam("country") String country){
+        try {
+            return userServices.generateEmail(name, lastName, country);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }        
     }
 
     /**
@@ -98,12 +110,13 @@ public class UserController {
      * @param users Arreglo de dos posiciones con la informacion antigua y la nueva
      * @return Resultado de la operación
      */
-    @PutMapping("/editUser")
-    public ResponseEntity<?> editUser(@RequestBody User[] users){
+    @RequestMapping(method = RequestMethod.POST, path = { "/editUser" })
+    public ResponseEntity<?> editUser(@RequestBody UserList users){
         try {
-            userServices.editUserInfo(users[0], users[1]);
+            userServices.editUserInfo(users.getUsers().get(0), users.getUsers().get(1));
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
