@@ -1,7 +1,5 @@
 package com.cidenet.application;
 
-import java.util.Collections;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class App {
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
+        try {
+            Log log = new Log("./log.txt");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     static int getPort() {
