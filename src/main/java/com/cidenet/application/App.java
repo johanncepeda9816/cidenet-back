@@ -9,6 +9,7 @@ public class App {
         SpringApplication.run(App.class, args);
         try {
             Log log = new Log("./log.txt");
+            Log.resetLog();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
