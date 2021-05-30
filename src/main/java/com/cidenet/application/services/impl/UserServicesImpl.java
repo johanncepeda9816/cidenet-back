@@ -47,6 +47,7 @@ public class UserServicesImpl implements UserServices {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             Log.addLine("No se registró el usuario. ERROR: " + e.getMessage());
             throw new AppException("No se registró el usuario. ERROR: " + e.getMessage());
         }
@@ -60,6 +61,8 @@ public class UserServicesImpl implements UserServices {
      * @throws AppException
      */
     public Email generateEmail(String name, String lastName, String country) throws AppException, IOException {
+        name = name.replaceAll(" ", "");
+        lastName = lastName.replaceAll(" ", "");
         String domain = country.equals("Colombia") ? ".co" : ".us";
         String email = (name.toLowerCase() + "." + lastName.toLowerCase() + "@cidenet.com" + domain);
         if (findUserByEmail(email) == null) {
