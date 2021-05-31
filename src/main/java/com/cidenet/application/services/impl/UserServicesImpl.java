@@ -90,6 +90,7 @@ public class UserServicesImpl implements UserServices {
      */
     public void editUserInfo(User oldUser, User newUser) throws AppException, IOException {
         try {
+            newUser.setRegistrationDate(oldUser.getRegistrationDate());
             userRepository.delete(oldUser);
             LocalDateTime now = LocalDateTime.now();
             DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");

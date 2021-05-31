@@ -1,7 +1,10 @@
-d:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\AppException.java
-d:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\services\impl\UserServicesImpl.java
-d:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\controllers\UserController.java
-d:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\services\UserServices.java
-d:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\repositories\UserRepository.java
-d:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\App.java
-d:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\entities\User.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\AppException.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\services\impl\UserServicesImpl.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\entities\UserList.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\controllers\UserController.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\services\UserServices.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\Log.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\repositories\UserRepository.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\App.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\entities\Email.java
+D:\Node.js\Cidenet\cidenet-back\src\main\java\com\cidenet\application\entities\User.java
